@@ -1,0 +1,280 @@
+{
+  "version": "2026.10.07-v3",
+  "synthetic": true,
+  "passed": 34,
+  "total": 34,
+  "results": [
+    {
+      "id": "nested_brand",
+      "text": "https://paypal.com.attacker.test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "paypal.com.attacker.test"
+    },
+    {
+      "id": "at_sign",
+      "text": "https://paypal.com@attacker.test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 65,
+      "hostname": "attacker.test"
+    },
+    {
+      "id": "typo_login",
+      "text": "https://paypa1.test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "paypa1.test"
+    },
+    {
+      "id": "brand_verify",
+      "text": "https://microsoft-security.test/verify",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "microsoft-security.test"
+    },
+    {
+      "id": "doc_exe",
+      "text": "https://files.example.test/invoice.pdf.exe",
+      "verdict": "HIGH RISK",
+      "type": "DANGEROUS DOWNLOAD INDICATORS",
+      "score": 80,
+      "hostname": "files.example.test"
+    },
+    {
+      "id": "image_exe",
+      "text": "https://files.example.test/photo.jpg.scr",
+      "verdict": "HIGH RISK",
+      "type": "DANGEROUS DOWNLOAD INDICATORS",
+      "score": 80,
+      "hostname": "files.example.test"
+    },
+    {
+      "id": "encoded_exe",
+      "text": "https://files.example.test/invoice.pdf%2eexe",
+      "verdict": "HIGH RISK",
+      "type": "DANGEROUS DOWNLOAD INDICATORS",
+      "score": 80,
+      "hostname": "files.example.test"
+    },
+    {
+      "id": "scam_lure",
+      "text": "https://offer.example.test/double-your-money?payment=bitcoin",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE SCAM",
+      "score": 65,
+      "hostname": "offer.example.test"
+    },
+    {
+      "id": "secret",
+      "text": "https://portal.example.test/login?password=example",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 70,
+      "hostname": "portal.example.test"
+    },
+    {
+      "id": "code",
+      "text": "https://portal.example.test/?otp=123456",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 70,
+      "hostname": "portal.example.test"
+    },
+    {
+      "id": "redirect_bad",
+      "text": "https://redirect.example.test/?url=https%3A%2F%2Fpaypal.com.attacker.test%2Flogin",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "redirect.example.test"
+    },
+    {
+      "id": "redirect_double_encoded",
+      "text": "https://redirect.example.test/?next=https%253A%252F%252Fpaypal.com.attacker.test%252Flogin",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "redirect.example.test"
+    },
+    {
+      "id": "cyrillic",
+      "text": "https://pаypal.test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 75,
+      "hostname": "pаypal.test"
+    },
+    {
+      "id": "no_scheme",
+      "text": "paypal.com.attacker.test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "paypal.com.attacker.test"
+    },
+    {
+      "id": "defanged",
+      "text": "hxxps://paypal[.]com.attacker[.]test/login",
+      "verdict": "HIGH RISK",
+      "type": "POSSIBLE PHISHING",
+      "score": 80,
+      "hostname": "paypal.com.attacker.test"
+    },
+    {
+      "id": "official",
+      "text": "https://www.paypal.com/login",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "www.paypal.com"
+    },
+    {
+      "id": "ms_official",
+      "text": "https://login.microsoftonline.com/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "login.microsoftonline.com"
+    },
+    {
+      "id": "ordinary",
+      "text": "https://example.com/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "example.com"
+    },
+    {
+      "id": "shortener",
+      "text": "https://bit.ly/example",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 10,
+      "hostname": "bit.ly"
+    },
+    {
+      "id": "http",
+      "text": "http://example.com/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 5,
+      "hostname": "example.com"
+    },
+    {
+      "id": "ipv4",
+      "text": "http://192.0.2.1/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 15,
+      "hostname": "192.0.2.1"
+    },
+    {
+      "id": "ipv6",
+      "text": "http://[::1]/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 15,
+      "hostname": "[::1]"
+    },
+    {
+      "id": "bare_ipv6",
+      "text": "http://[::1]",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 15,
+      "hostname": "[::1]"
+    },
+    {
+      "id": "punycode",
+      "text": "https://xn--bcher-kva.example/",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 8,
+      "hostname": "xn--bcher-kva.example"
+    },
+    {
+      "id": "brand_article",
+      "text": "https://research.example.test/articles/paypal",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "research.example.test"
+    },
+    {
+      "id": "brand_query",
+      "text": "https://research.example.test/?q=paypal",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "research.example.test"
+    },
+    {
+      "id": "normal_redirect",
+      "text": "https://redirect.example.test/?next=https%3A%2F%2Fexample.com%2F",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 10,
+      "hostname": "redirect.example.test"
+    },
+    {
+      "id": "exe",
+      "text": "https://downloads.example.test/app.exe",
+      "verdict": "SUSPICIOUS",
+      "type": "NOT CONFIRMED",
+      "score": 40,
+      "hostname": "downloads.example.test"
+    },
+    {
+      "id": "typo_no_login",
+      "text": "https://paypa1.test/",
+      "verdict": "SUSPICIOUS",
+      "type": "NOT CONFIRMED",
+      "score": 45,
+      "hostname": "paypa1.test"
+    },
+    {
+      "id": "numeric",
+      "text": "http://2130706433/",
+      "verdict": "SUSPICIOUS",
+      "type": "NOT CONFIRMED",
+      "score": 35,
+      "hostname": "2130706433"
+    },
+    {
+      "id": "encoded_host",
+      "text": "https://%70aypal.test/",
+      "verdict": "SUSPICIOUS",
+      "type": "NOT CONFIRMED",
+      "score": 35,
+      "hostname": "%70aypal.test"
+    },
+    {
+      "id": "bad_port",
+      "text": "https://example.com:99999/",
+      "verdict": "SUSPICIOUS",
+      "type": "NOT CONFIRMED",
+      "score": 35,
+      "hostname": "example.com"
+    },
+    {
+      "id": "bracketed",
+      "text": "(https://example.com/page)",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "example.com"
+    },
+    {
+      "id": "path_parentheses",
+      "text": "https://example.com/article_(example)",
+      "verdict": "UNVERIFIED",
+      "type": "NOT CONFIRMED",
+      "score": 0,
+      "hostname": "example.com"
+    }
+  ]
+}

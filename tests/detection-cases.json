@@ -1,0 +1,518 @@
+[
+  {
+    "id": "netflix",
+    "expected": "HIGH RISK",
+    "text": "Your Netflix account has been suspended due to payment failure. Please click the link immediately to verify billing and avoid permanent account termination: http://bit.ly/fake-netflix-link",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "chase",
+    "expected": "HIGH RISK",
+    "text": "CHASE ALERT: Urgent activity detected. Your card is restricted. Confirm identity now at http://chase-security-update.com or call immediately.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "lottery",
+    "expected": "HIGH RISK",
+    "text": "CONGRATULATIONS! You have won $1,500,000 in the International Email Lottery! Reply with your bank info and deposit $250 fee to process funds.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "password_link",
+    "expected": "HIGH RISK",
+    "text": "Please enter your password at https://login.example.test to restore access.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "otp",
+    "expected": "HIGH RISK",
+    "text": "Please send me your one-time code to complete the verification.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "otp_reply",
+    "expected": "HIGH RISK",
+    "text": "Reply with the verification code we just sent you.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "seed",
+    "expected": "HIGH RISK",
+    "text": "Enter your seed phrase to restore your wallet.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "gift_codes",
+    "expected": "HIGH RISK",
+    "text": "Buy gift cards and send the numbers on the back to me.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "bec",
+    "expected": "HIGH RISK",
+    "text": "Wire payment to our new bank account immediately. Keep this confidential and do not call.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "bec_polite",
+    "expected": "HIGH RISK",
+    "text": "Dear team, please transfer funds using the updated wire instructions. Thanks for your help.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "task",
+    "expected": "HIGH RISK",
+    "text": "Complete product boosting tasks for commission. Deposit USDT to unlock your earnings.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "task_unlock",
+    "expected": "HIGH RISK",
+    "text": "Your task platform balance is ready. Pay a release fee to withdraw earnings.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "investment",
+    "expected": "HIGH RISK",
+    "text": "Guaranteed returns from this investment. Send bitcoin to begin today.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "fake_check",
+    "expected": "HIGH RISK",
+    "text": "Deposit the check and send the remainder to our equipment vendor.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "job",
+    "expected": "HIGH RISK",
+    "text": "Pay the equipment fee to begin work. Transfer USDT to the recruiter.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "arrest",
+    "expected": "HIGH RISK",
+    "text": "Pay the processing fee using gift cards to avoid arrest.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "savings",
+    "expected": "HIGH RISK",
+    "text": "Move your savings to a safe account to protect them from fraud.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "extortion",
+    "expected": "HIGH RISK",
+    "text": "Pay bitcoin or I will release your private video to all your contacts.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "remote",
+    "expected": "HIGH RISK",
+    "text": "Your computer is infected. Install AnyDesk so we can fix the problem.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "captcha",
+    "expected": "HIGH RISK",
+    "text": "To verify you are human, press Windows + R and then Ctrl + V.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "macros",
+    "expected": "HIGH RISK",
+    "text": "Enable macros to display the attached invoice.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "toll",
+    "expected": "HIGH RISK",
+    "text": "Final notice: unpaid toll charges. Pay the fee immediately at https://tolls.example.test.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "delivery",
+    "expected": "HIGH RISK",
+    "text": "Your package is held. Pay a redelivery fee at https://delivery.example.test.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "qr",
+    "expected": "HIGH RISK",
+    "text": "Your account is locked. Scan the QR code to verify your account.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "userinfo",
+    "expected": "HIGH RISK",
+    "text": "Confirm your identity at https://paypal.com@secure.example.test/login.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "nested_brand",
+    "expected": "HIGH RISK",
+    "text": "Please enter your password at https://paypal.com.attacker.test/login.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "typo_brand",
+    "expected": "HIGH RISK",
+    "text": "Verify your account at https://paypa1.test/check.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "zero_width",
+    "expected": "HIGH RISK",
+    "text": "Please s​end your one-time code now.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "defanged",
+    "expected": "HIGH RISK",
+    "text": "Your account is suspended. Verify your account at hxxps://paypal[.]com.attacker[.]test/login.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "fullwidth",
+    "expected": "HIGH RISK",
+    "text": "Ｐｌｅａｓｅ ｓｅｎｄ ｙｏｕｒ ｏｎｅ-ｔｉｍｅ ｃｏｄｅ.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "mixed_good_words",
+    "expected": "HIGH RISK",
+    "text": "Meeting agenda and project notes, thanks team. Send your verification code to me now.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "negation_then_attack",
+    "expected": "HIGH RISK",
+    "text": "Never share passwords with strangers. Please send your password at https://help.example.test.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "known_domain_not_bypass",
+    "expected": "HIGH RISK",
+    "text": "See https://paypal.com for more information. Send your one-time code to me.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_grammar_errors",
+    "expected": "HIGH RISK",
+    "text": "Please provide your bank details at https://finance.example.test so that we can process your reimbursement.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "money_mule",
+    "expected": "HIGH RISK",
+    "text": "Receive payments in your account and transfer the rest to us; keep 10 percent commission.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "support_phone",
+    "expected": "HIGH RISK",
+    "text": "Your computer is blocked by a virus. Call support immediately.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "meeting",
+    "expected": "SAFE",
+    "text": "Hi team, attached are the meeting notes and project milestones for next week's sprint. Let me know if you have any questions.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "bank_statement",
+    "expected": "SAFE",
+    "text": "Your bank statement is available. Open your usual banking app to view it.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "password_advice",
+    "expected": "SAFE",
+    "text": "Never share your password or verification code with anyone.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "otp_notification",
+    "expected": "SAFE",
+    "text": "Your verification code is 123456. Do not share this code with anyone.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "password_reset",
+    "expected": "SAFE",
+    "text": "You requested a password reset. Continue at https://accounts.google.com.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "official_verify",
+    "expected": "SAFE",
+    "text": "Verify your account at https://www.paypal.com/security.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "official_subdomain",
+    "expected": "SAFE",
+    "text": "Please visit https://support.microsoft.com for help.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "urgent_meeting",
+    "expected": "SAFE",
+    "text": "Urgent: the project meeting starts in ten minutes.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "urgent_repeat",
+    "expected": "SAFE",
+    "text": "urgent immediately urgent immediately final notice urgent",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "invoice",
+    "expected": "SAFE",
+    "text": "Attached is invoice 1042 for the services delivered last month. Please pay using the usual process.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "payroll",
+    "expected": "SAFE",
+    "text": "Your paycheck has been deposited in your bank account.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "refund_notice",
+    "expected": "SAFE",
+    "text": "Your refund was issued to your original payment method. No action is needed.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "job_interview",
+    "expected": "SAFE",
+    "text": "We would like to schedule an interview for the help desk position next Tuesday.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "job_background",
+    "expected": "SAFE",
+    "text": "Please complete the background check through the portal you used to apply.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "crypto_news",
+    "expected": "SAFE",
+    "text": "Bitcoin and Ethereum prices moved today. This article discusses cryptocurrency risk.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "gift_birthday",
+    "expected": "SAFE",
+    "text": "I received a gift card for my birthday. Thank you!",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "gift_no_codes",
+    "expected": "SAFE",
+    "text": "Please buy a gift for the party, not gift cards.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "prize_team",
+    "expected": "SAFE",
+    "text": "Our team won the soccer tournament yesterday.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "substring_known",
+    "expected": "SAFE",
+    "text": "The known issue affects steam engines and spinning wheels.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "shortener",
+    "expected": "SAFE",
+    "text": "Our public event schedule is at https://bit.ly/example.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "ip_internal",
+    "expected": "SAFE",
+    "text": "The lab documentation is at http://192.0.2.10/readme.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "unicode_domain",
+    "expected": "SAFE",
+    "text": "Read the article at https://xn--bcher-kva.example/.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "qr_menu",
+    "expected": "SAFE",
+    "text": "Scan this QR code to view the restaurant menu.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "security_training",
+    "expected": "SAFE",
+    "text": "Security training: never send your password to anyone. Do not buy gift cards for callers.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_seed",
+    "expected": "SAFE",
+    "text": "Do not enter your seed phrase into websites.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_macro",
+    "expected": "SAFE",
+    "text": "Never enable macros in an unexpected document.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_otp",
+    "expected": "SAFE",
+    "text": "We will never ask you to send your verification code.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_crypto",
+    "expected": "SAFE",
+    "text": "Do not send bitcoin to anyone promising a prize.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "no_install",
+    "expected": "SAFE",
+    "text": "Do not install AnyDesk at the request of an unknown caller.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "toll_receipt",
+    "expected": "SAFE",
+    "text": "Your toll payment was received. Receipt number 123.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "delivery_receipt",
+    "expected": "SAFE",
+    "text": "Your package was delivered to the front desk at 3 PM.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "class_command",
+    "expected": "SAFE",
+    "text": "For the operating systems lab, press Windows + R to open the Run dialog.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "brand_in_path",
+    "expected": "SAFE",
+    "text": "Read https://research.example.test/articles/paypal for an analysis.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "brand_in_query",
+    "expected": "SAFE",
+    "text": "Search https://research.example.test/?q=paypal for notes.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "brand_substring",
+    "expected": "SAFE",
+    "text": "The backup service is available at https://backups.example.test.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "official_email",
+    "expected": "SAFE",
+    "text": "Contact support@paypal.com using the address from your saved records.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "newsletter",
+    "expected": "SAFE",
+    "text": "Weekly newsletter: project updates, free events, and our new meeting agenda.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "unicode_meeting",
+    "expected": "SAFE",
+    "text": "Bonjour équipe, the meeting is tomorrow. Merci!",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "merchant_payment",
+    "expected": "SAFE",
+    "text": "The invoice payment is due next month. Questions? Call your usual account manager.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "charity",
+    "expected": "SAFE",
+    "text": "The campus charity event starts at noon. Bring canned food if you can.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "brand_only",
+    "expected": "HIGH RISK",
+    "text": "https://paypal.com.attacker.test/login",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "gift_request",
+    "expected": "SUSPICIOUS",
+    "text": "Please buy gift cards for the team.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "bank_change_only",
+    "expected": "SUSPICIOUS",
+    "text": "Our bank details have changed.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "password_no_link",
+    "expected": "SUSPICIOUS",
+    "text": "Please send your password to the administrator.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "guaranteed_only",
+    "expected": "SUSPICIOUS",
+    "text": "We offer guaranteed returns on this investment.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "recovery_fee",
+    "expected": "SUSPICIOUS",
+    "text": "We can recover your lost funds for an upfront fee.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "remote_only",
+    "expected": "SUSPICIOUS",
+    "text": "Install AnyDesk for this remote support session.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "download_only",
+    "expected": "SUSPICIOUS",
+    "text": "Download the file https://downloads.example.test/update.exe.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "toll_only",
+    "expected": "SUSPICIOUS",
+    "text": "There are unpaid toll charges on your account.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  },
+  {
+    "id": "prize_only",
+    "expected": "SUSPICIOUS",
+    "text": "You have won a cash prize.",
+    "origin": "authored synthetic regression case; not a real-world benchmark"
+  }
+]

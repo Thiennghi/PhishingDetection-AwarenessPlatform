@@ -1,0 +1,19 @@
+CYBERGUARD: INFINITYFREE + XAMPP SCAN FIX
+==========================================
+
+This package contains the project with clearer validation for the detection data JSON file.
+The screenshot error `json_decode(): Argument #1 ($json) must be of type string, false given`
+usually means PHP failed to read a JSON file (file missing, path/case mismatch, or permissions), or a database detection rule has empty JSON.
+
+INSTALL SAFELY
+1. Back up your live project files and database first.
+2. Extract this ZIP locally.
+3. Upload the contents of `phishing-platform-redesign5-fixed2` into your existing project folder, replacing matching application files.
+4. Ensure the `data` folder is uploaded too, especially `data/detection-knowledge.json`. Hosting file names are case-sensitive.
+5. Keep your existing `config_local_live.php` / database settings; do not overwrite with sample credentials.
+6. Check that the PHP process can read the `data` directory and JSON file (ordinary readable file permissions, commonly 644 files and 755 directories).
+7. On XAMPP, import the project's SQL schema/seed into the configured local database and make sure Apache/MySQL are running.
+8. Test a scan. If the scan still fails, check the hosting PHP error log. The endpoint logs the underlying cause while avoiding exposing server details to public visitors.
+
+IMPORTANT
+The message `Showing a local estimate; this scan was not saved` means the browser-side fallback result is not saved to the database. It is not proof that the server scan succeeded.

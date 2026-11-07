@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>CyberGuard • Administrator</title>
+<link rel="stylesheet" href="sancer.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top-nav">
+  <div class="logo"><span class="brand-mark">C</span>CyberGuard.</div><a href="index.html">← Back to platform</a>
+   <div class="nav-links"><a href="index.html">← Back to platform</a><button type="button" id="themeToggle" class="nav-item theme-toggle" aria-label="Switch theme">🌙</button></div>
+</header>
+<main class="container admin-page">
+<span class="eyebrow">ADMINISTRATOR WORKSPACE</span>
+<h1>Review community reports.</h1>
+<p class="subtitle">Approvals create exact URL indicators for 30 days. Independently verify the evidence before approving. Rejecting a report revokes that report’s indicator; another approved report for the same URL can still apply.</p>
+
+<p id="adminStatus" class="admin-status" role="status" aria-live="polite"></p>
+
+<section id="setupPanel" class="card hidden">
+  <h2>First-time administrator setup</h2>
+  <p id="setupIntro">Create your administrator credentials. Use a unique password with at least 12 characters. Setup locks itself after the account is created.</p>
+  <div id="setupHint" class="admin-hint hidden"></div>
+  <form id="adminSetup" autocomplete="off">
+    <div id="setupKeyWrap" class="hidden">
+      <label for="setupKey">One-time setup key (from admin_setup_key.php)</label>
+      <input class="form-control" id="setupKey" type="password" autocomplete="off" maxlength="200">
+    </div>
+    <label for="setupUsername">Administrator username</label>
+    <input class="form-control" id="setupUsername" autocomplete="username" value="admin" maxlength="100" required>
+    <label for="setupPassword">Create password</label>
+    <input class="form-control" id="setupPassword" type="password" autocomplete="new-password" minlength="12" maxlength="1024" required>
+    <div class="strength" aria-hidden="true"><span id="setupStrengthBar"></span></div><small id="setupStrengthText" class="muted"></small>
+    <label for="setupConfirm">Confirm password</label>
+    <input class="form-control" id="setupConfirm" type="password" autocomplete="new-password" minlength="12" maxlength="1024" required>
+    <label class="check"><input type="checkbox" data-toggle-password="setupPassword,setupConfirm"> Show passwords</label>
+    <div class="margin-top"><button class="btn-primary">Create administrator →</button></div>
+  </form>
+</section>
+
+<section id="loginPanel" class="card">
+  <h2>Administrator sign in</h2>
+  <form id="adminLogin">
+    <label for="username">Username</label>
+    <input class="form-control" id="username" autocomplete="username" required>
+    <label for="password">Password</label>
+    <input class="form-control" id="password" type="password" autocomplete="current-password" required>
+    <label class="check"><input type="checkbox" data-toggle-password="password"> Show password</label>
+    <div class="margin-top button-row"><button class="btn-primary">Sign in →</button><button id="showReset" type="button" class="btn-secondary">Forgot username / password?</button></div>
+  </form>
+</section>
+
+<section id="resetPanel" class="card hidden">
+  <h2>Recover administrator account</h2>
+  <p>This replaces the administrator username and password without deleting reports. On InfinityFree, first create the one-time key file described in ADMIN-SETUP.md, then enter that key below. The key file is deleted automatically after a successful reset.</p>
+  <form id="adminReset" autocomplete="off">
+    <label for="recoveryKey">One-time recovery key (hosted websites)</label>
+    <input class="form-control" id="recoveryKey" type="password" autocomplete="off" maxlength="200" placeholder="Required on InfinityFree">
+    <label for="resetUsername">New administrator username</label>
+    <input class="form-control" id="resetUsername" autocomplete="username" value="admin" maxlength="100" required>
+    <label for="resetPassword">New password (at least 12 characters)</label>
+    <input class="form-control" id="resetPassword" type="password" autocomplete="new-password" minlength="12" maxlength="1024" required>
+    <label for="resetConfirm">Confirm new password</label>
+    <input class="form-control" id="resetConfirm" type="password" autocomplete="new-password" minlength="12" maxlength="1024" required>
+    <label class="check"><input type="checkbox" data-toggle-password="resetPassword,resetConfirm"> Show passwords</label>
+    <div class="margin-top button-row"><button class="btn-primary">Reset administrator account</button><button id="cancelReset" type="button" class="btn-secondary">Cancel</button></div>
+  </form>
+</section>
+
+<section id="reviewPanel" class="hidden">
+  <div class="admin-stats" id="adminStats">
+    <div class="card stat-card"><h3 id="statPending">0</h3><span>Pending</span></div>
+    <div class="card stat-card"><h3 id="statApproved" class="text-safe">0</h3><span>Approved</span></div>
+    <div class="card stat-card"><h3 id="statRejected" class="text-danger">0</h3><span>Rejected</span></div>
+  </div>
+  <div class="admin-toolbar">
+    <div class="admin-tabs" role="tablist" aria-label="Filter reports">
+      <button type="button" class="pill active" data-filter="pending" role="tab">Pending</button>
+      <button type="button" class="pill" data-filter="approved" role="tab">Approved</button>
+      <button type="button" class="pill" data-filter="rejected" role="tab">Rejected</button>
+      <button type="button" class="pill" data-filter="all" role="tab">All</button>
+    </div>
+    <input id="reportSearch" class="form-control" type="search" placeholder="Search id, category or text…" aria-label="Search reports">
+    <div class="button-row"><button id="refreshReports" class="btn-secondary" type="button">Refresh</button><button id="logout" class="btn-secondary" type="button">Sign out</button></div>
+  </div>
+  <p id="listSummary" class="subtitle"></p>
+  <div id="reviewList"></div>
+</section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGuard • Check before you click</title>
+
+    <link rel="stylesheet" href="sancer.css">
+     <script src="theme.js"></script> <!-- ADD THIS LINE -->
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- TOP NAVIGATION BAR -->
+    <header class="top-nav">
+        <div class="logo">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="brand-mark">C</span><span>CyberGuard<span class="brand-dot">.</span></span>
+        </div>
+        <nav class="nav-links">
+            <button class="nav-item active" data-tab="homepage"><i class="fa-solid fa-house"></i> Home</button>
+            <button class="nav-item" data-tab="analyze"><i class="fa-solid fa-magnifying-glass"></i> Analyze</button>
+            <button class="nav-item" data-tab="awareness"><i class="fa-solid fa-book-open"></i> Awareness</button>
+            <button class="nav-item" data-tab="report"><i class="fa-solid fa-flag"></i> Report</button>
+            <button class="nav-item" data-tab="dashboard"><i class="material-icons">dashboard</i> Dashboard</button>
+            
+            <button type="button" id="themeToggle" class="nav-item theme-toggle" aria-label="Switch theme">🌙</button> 
+        </nav>
+    </header>
+  
+    <!-- MAIN DASHBOARD CONTENT AREA -->
+    <main id="main" class="container">
+
+        <!-- 1. HOMEPAGE TAB -->
+        <section id="homepage" class="tab-content active">
+            <div class="hero"><span class="eyebrow">A SMALL PAUSE. A SMARTER CLICK.</span>
+                <h1>Check before<br>you <em>click.</em></h1>
+                <p>A suspicious link. An urgent message. A deal too good to be true.<br>Find the warning signs, understand the risk, and help others stay aware.</p>
+                <button class="btn-primary" data-action="switch-tab" data-tab-target="analyze">
+                    <i class="fa-solid fa-rocket"></i> Check a link or message →
+                </button><p class="hero-note">Explainable checks · No suspicious websites opened</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card feature-card">
+                    <i class="fa-solid fa-microchip feature-icon"></i>
+                    <h3>01 / Check the signs</h3>
+                    <p>Checks FTC, FBI and Microsoft-inspired rules. The app server analyzes messages without storing scan text.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fa-solid fa-bolt feature-icon"></i>
+                    <h3>02 / Understand the risk</h3>
+                    <p>Shows an explainable risk score and separate signal strengths. Scores are not probabilities or guarantees.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fa-solid fa-user-shield feature-icon"></i>
+                    <h3>03 / Build awareness</h3>
+                    <p>Breaks down explicit threat markers including urgent calls to action, suspicious credentials, and suspicious URLs.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 2. ANALYZE TAB -->
+        <section id="analyze" class="tab-content">
+            <div class="scanner-wrapper">
+                <div class="card scanner-input">
+                    <span class="eyebrow">LINK & MESSAGE CHECKER</span><h2>Something feel off?</h2>
+                    <p class="subtitle">Paste a message or URL. Links are inspected without visiting the site; no result guarantees safety.</p>
+                    
+                    <div class="sample-pills">
+                        <span>Load Sample:</span>
+                        <button class="pill" data-action="load-sample" data-sample="phishing_netflix">Netflix Phishing</button>
+                        <button class="pill" data-action="load-sample" data-sample="phishing_bank">Bank Urgent SMS</button>
+                        <button class="pill" data-action="load-sample" data-sample="scam_lottery">Lottery Scam</button>
+                        <button class="pill" data-action="load-sample" data-sample="legit_email">Legitimate Email</button>
+                        <button class="pill" data-action="load-sample" data-sample="scam_task">Task Scam</button>
+                        <button class="pill" data-action="load-sample" data-sample="scam_bec">Payment Redirect</button>
+                        <button class="pill" data-action="load-sample" data-sample="scam_captcha">Fake CAPTCHA</button>
+                        <button class="pill" data-action="load-sample" data-sample="url_phishing">Deceptive Link</button>
+                        <button class="pill" data-action="load-sample" data-sample="url_download">Dangerous Download</button>
+                    </div>
+
+                    <form id="detectionForm">
+                        <label for="scanMode">What would you like to check?</label>
+                        <select id="scanMode" name="scan_mode">
+                            <option value="message">Message and any links inside it</option>
+                            <option value="url">Links / URLs only (up to 20)</option>
+                        </select>
+                        <label class="sr-only" for="messageInput">Link or message to analyze</label><textarea id="messageInput" placeholder="Paste a message, https://example.com, or one URL per line..." required></textarea>
+                        <div class="button-row">
+                            <button type="submit" class="btn-primary" id="submitBtn">
+                                <i class="fa-solid fa-paper-plane"></i> Analyze
+                            </button>
+                            <button type="button" class="btn-secondary" id="clearBtn">
+                                <i class="fa-solid fa-rotate-left"></i> Clear Text
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- SCAN RESULTS DISPLAY -->
+                <div id="resultCard" class="card scanner-results hidden" aria-live="polite">
+                    <h3>Your risk breakdown</h3><button type="button" class="btn-secondary" id="reportAnalysis">Report this content →</button>
+                    
+                    <div class="score-container">
+                        <div class="score-circle" id="scoreCircle">
+                            <span id="riskScore">0</span>
+                            <small>/100</small>
+                        </div>
+                        <div class="score-details">
+                            <h4 id="classificationLabel">UNKNOWN</h4>
+                            <p id="classificationDesc">Analysis complete.</p>
+                        </div>
+                    </div>
+
+                    <div class="probabilities">
+                        <label>Phishing signals: <span id="phishingProb">0/100</span></label>
+                        <div class="progress-bar"><div class="fill danger" id="phishingBar"></div></div>
+
+                        <label>Scam signals: <span id="scamProb">0/100</span></label>
+                        <div class="progress-bar"><div class="fill warning" id="scamBar"></div></div>
+
+                        <label>Malware-lure signals: <span id="legitProb">0/100</span></label>
+                        <div class="progress-bar"><div class="fill danger" id="legitBar"></div></div>
+                    </div>
+
+                    <section id="urlResults" class="url-results hidden" aria-label="Individual URL checks">
+                        <h4>Link-by-link results</h4>
+                        <p class="subtitle">Links below are displayed as inactive text. Sites and downloads were not opened.</p>
+                        <div id="urlResultsList"></div>
+                    </section>
+                    <div class="threat-tags">
+                        <h4>Identified Flags:</h4>
+                        <div id="flagContainer" class="flags"></div>
+                        <p id="detectorDetails" class="subtitle"></p>
+                        <details><summary>Sources behind these indicators</summary><ul id="detectorSources"></ul></details>
+                    </div>
+                </div>
+
+                <!-- SCAN HISTORY TABLE DISPLAYED AFTER SUBMIT -->
+            </div>
+        </section>
+
+        <!-- 3. AWARENESS TAB -->
+        <section id="awareness" class="tab-content">
+            <div class="card">
+                <h2>Security Awareness Guide</h2>
+                <p>Learn how to identify social engineering red flags before interacting with malicious links.</p>
+                
+                <div class="grid-2 margin-top">
+                    <div class="info-box">
+                        <h3><i class="fa-solid fa-triangle-exclamation text-warning"></i> Phishing Red Flags</h3>
+                        <ul>
+                            <li>Sense of artificial urgency (e.g., "Account suspended within 24 hours").</li>
+                            <li>Generic greetings ("Dear Customer" instead of your name).</li>
+                            <li>Misspelled domain names in sender addresses or links.</li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h3><i class="fa-solid fa-sack-dollar text-safe"></i> Common Financial Scams</h3>
+                        <ul>
+                            <li>Unexpected prize, inheritance, or job offers requiring upfront fees.</li>
+                            <li>Requests for non-standard payment methods (crypto, gift cards, wire transfer).</li>
+                            <li>Impersonation of government officials or tech support agents.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCAN HISTORY TABLE IN AWARENESS TAB -->
+        <div class="card margin-top"><span class="eyebrow">THE AWARENESS LIBRARY</span><h2>Recognize the pattern.</h2><p class="subtitle">Warning signs, realistic examples, and your next move. Educational examples are not live threats.</p><label for="awarenessSearch">Find a threat or warning sign</label><input id="awarenessSearch" class="form-control" type="search" placeholder="Try password, payment, download…"><p id="awarenessCount" role="status"></p><div id="awarenessTableContainerTab" class="table-scroll"></div><noscript>Enable JavaScript to browse the awareness table.</noscript></div>
+
+        </section>
+
+        <!-- 4. REPORT TAB -->
+        <section id="report" class="tab-content">
+            <div class="card">
+                <h2>Report a Threat</h2>
+                <p>Flag something suspicious in a few seconds. Your report is saved privately to this platform for review; it is not sent to an outside organization.</p>
+
+                <div class="report-steps"><span>1 · Add the link</span><span>2 · Choose the concern</span><span>3 · Submit for review</span></div><form id="reportForm"><div class="form-group"><label for="reportUrl">Suspicious URL <small>(optional for message reports)</small></label><input id="reportUrl" class="form-control" maxlength="2048" placeholder="https://example.test/suspicious-page" autocomplete="off" spellcheck="false"><small>Remove personal tokens or account details before submitting. A redacted URL may not match the original link.</small></div>
+                    <div class="form-group">
+                        <label for="threatType">Threat Type</label>
+                        <select id="threatType" class="form-control">
+                            <option value="phishing">Phishing Email / SMS</option>
+                            <option value="scam">Financial Scam</option>
+                            <option value="malware">Malicious URL / Link</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="threatContent">What made you suspicious? <small>(optional when a URL is provided)</small></label>
+                        <textarea id="threatContent" class="form-control" rows="5" maxlength="3000" placeholder="For example: The message asks me to verify my password."></textarea>
+                    </div>
+                    <p class="subtitle">Only include information you want stored for administrator review. Never include passwords, OTPs, or payment details.</p><button id="reportSubmit" type="submit" class="btn-primary">
+                        Submit report →
+                    </button>
+                </form><p id="reportStatus" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+
+        <!-- 5. DASHBOARD TAB -->
+        <section id="dashboard" class="tab-content">
+            <h2>Your session at a glance</h2>
+            <div class="grid-3 margin-top">
+                <div class="card stat-card">
+                    <h3 id="statTotalScans">0</h3>
+                    <p><i class="material-icons">analytics</i> Checks this session</p>
+                </div>
+                <div class="card stat-card">
+                    <h3 id="statHighRisk" class="text-danger">0</h3>
+                    <p><i class="material-icons">gpp_bad</i> High-risk results</p>
+                </div>
+                <div class="card stat-card">
+                    <h3 id="statLegit" class="text-safe">0</h3>
+                    <p><i class="material-icons">verified_user</i> Low-Risk Scans (Unverified)</p>
+                </div>
+            </div>
+
+            <div class="card margin-top" id="scanHistoryCard">
+                <button type="button" class="btn-secondary" id="scanHistoryToggle" data-action="toggle-history" aria-expanded="false" aria-controls="scanHistoryPanel">
+                    <i class="fa-solid fa-clock-rotate-left"></i> Scan History
+                </button>
+                <div id="scanHistoryPanel" class="hidden">
+                    <div class="sh-bar">
+                        <strong>Scan History &mdash; cyberguard_db</strong>
+                        <span class="sh-actions">
+                            <button type="button" class="btn-secondary" data-action="close-history">Close &times;</button>
+                        </span>
+                    </div>
+                    <div id="scanHistoryBody" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <button class="btn-primary" data-action="reset-all">Reset session &amp; go home</button>
+            <p id="resetStatus" role="status" aria-live="polite"></p>
+        </section>
+
+    </main>
+
+    <!-- AI SECURITY ASSISTANT -->
+    <div id="aiChatBox" class="ai-chat-box">
+        <div class="ai-chat-header">
+            <span><i class="fa-solid fa-robot"></i> Security Assistant</span>
+            <button id="aiCloseBtn" class="ai-close-btn" type="button">×</button>
+        </div>
+        <div id="aiChatMessages" class="ai-chat-messages"></div>
+        <div class="ai-chat-input-row">
+            <input id="aiChatInput" type="text" placeholder="Ask about phishing, scams, or safe URLs..." />
+            <button id="aiSendBtn" type="button" class="btn-primary">Send</button>
+        </div>
+    </div>
+
+    <button aria-label="Open security assistant" id="aiToggleBtn" class="ai-toggle-btn" type="button">
+        ?
+    </button>
+
+    <!-- FOOTER WITH REFERENCES AND COMMENTS -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>CyberGuard AI System</strong> &copy; 2026. Educational Demonstration Platform.</p>
+            Created by Edwin Mathews, Frederick Adevu, Kwaku Takyi, Bryan Duong<br><a href="admin.html">Administrator review</a>
+        </div>
+    </footer>
+
+    <!-- Security module must load BEFORE the main app logic -->
+    <script src="inputSecurity.js"></script>
+    <script src="phishingData.js"></script>
+    <script src="detectionEngine.js"></script>
+    <script src="urlInspector.js"></script>
+    <script src="aiAssistant.js"></script>
+    <script src="awareness.js"></script>
+    <script src="scancers2.js"></script>
+
+</body>
+</html>
