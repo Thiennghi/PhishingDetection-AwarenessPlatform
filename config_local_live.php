@@ -16,11 +16,13 @@ return [
     'db' => [
         // 1) LIVE - copy from the host panel > MySQL Databases
         'live' => [
-            'host' => 'sqlXXX.infinityfree.com',   // the "MySQL host name", NOT localhost
+            // GGC cPanel (site uploaded to the same server as the database): host is localhost.
+            // InfinityFree instead: use its "MySQL host name" (sqlXXX.infinityfree.com), if0_ name/user.
+            'host' => 'localhost',
             'port' => 3306,
-            'name' => 'if0_XXXXXXXX_cyberguard',   // full name incl. the if0_ prefix
-            'user' => 'if0_XXXXXXXX',
-            'pass' => 'YOUR_VPANEL_PASSWORD',
+            'name' => 'tduongdo_cyberguard',
+            'user' => 'tduongdo_app',              // cPanel > MySQL Databases > user added with ALL PRIVILEGES
+            'pass' => 'Nghi13062003',
         ],
         // 2) LOCAL XAMPP
         'local' => [
